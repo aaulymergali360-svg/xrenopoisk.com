@@ -159,3 +159,166 @@ footer { margin-top: 60px; border-top: 1px solid var(--border); padding: 30px 0;
   .featured-grid, .posters-grid-layout, .cabinet-container { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
+@media (max-width: 1200px) {
+  .page,
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .featured-grid,
+  .posters-grid-layout {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .hero {
+    height: auto;
+    min-height: 550px;
+    padding-top: 80px;
+  }
+
+  .hero-stills {
+    display: none;
+  }
+
+  .featured-grid,
+  .cabinet-container {
+    grid-template-columns: 1fr;
+  }
+
+  .posters-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wide-card {
+    padding: 25px;
+    height: auto;
+  }
+
+  .wc-title {
+    font-size: 30px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .nav-search {
+    width: 160px;
+  }
+}
+@media (max-width: 768px) {
+
+  .page,
+  .nav-inner {
+    padding: 0 15px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-search {
+    display: none;
+  }
+
+  .nav-watch-btn {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 70px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding-bottom: 25px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-title-sub {
+    font-size: 16px;
+  }
+
+  .hero-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-play,
+  .btn-info {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .featured-grid,
+  .posters-grid-layout,
+  .cabinet-container {
+    grid-template-columns: 1fr;
+  }
+
+  .wide-card {
+    padding: 20px;
+  }
+
+  .wc-title {
+    font-size: 24px;
+  }
+
+  .watchlist-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .watchlist-item img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+  }
+}
+@media (max-width: 480px) {
+
+  body {
+    font-size: 13px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .wc-title {
+    font-size: 20px;
+  }
+
+  .fc-title {
+    font-size: 18px;
+  }
+
+  .poster-card-custom {
+    padding: 8px;
+  }
+
+  .btn-play,
+  .btn-info {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
