@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КиноПоиск Онлайн</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo" id="logo-btn">Кино<span>Поиск</span><sup>онлайн</sup></div>
+      <div class="nav-links">
+        <span class="nav-link active" data-target="main-page">Фильмы и сериалы</span>
+        <span class="nav-link" data-target="watchlist-page">Мои подборки</span>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search-box">
+          <div class="nav-search" id="search-trigger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" id="search-input" placeholder="Поиск фильма..." autocomplete="off">
+          </div>
+          <div class="search-results" id="search-results-box"></div>
+        </div>
+        <button class="nav-watch-btn" id="nav-watchlist-btn">Хочу смотреть (<span id="fav-count">0</span>)</button>
+        <div class="nav-avatar" id="nav-profile-btn" title="Личный кабинет">👤</div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal" id="trailer-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-trailer">×</button>
+      <div class="video-container">
+        <iframe id="trailer-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-page" class="page-content active">
+    <section class="hero">
+      <div class="hero-film-bg" style="background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200'); background-size: cover; background-position: center;"></div>
+      <div class="hero-stills">
+        <div class="still" style="background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600'); background-size: cover;"></div>
+        <div class="still" style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=600'); background-size: cover;"></div>
+        <div class="still" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600'); background-size: cover;"></div>
+      </div>
+      <div class="hero-bg"></div>
+      <div class="hero-content page">
+        <div class="hero-eyebrow">Выбор редакции · Премьера недели</div>
+        <h1 class="hero-title">Дюна:<br>Часть вторая</h1>
+        <div class="hero-title-sub">Dune: Part Two</div>
+        <div class="hero-meta">
+          <span class="hero-rating">8.7</span>
+          <div class="hero-sep"></div>
+          <span class="hero-info">2024 · США · 167 мин</span>
+          <div class="hero-sep"></div>
+          <span class="hero-genre">Фантастика</span>
+          <span class="hero-genre">Боевик</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-play watch-trailer" data-video="https://www.youtube.com/embed/Way9Dexny3w">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Трейлер
+          </button>
+          <button class="btn-add add-to-fav-btn" data-id="dune2" data-title="Дюна: Часть вторая" data-img="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=300" data-rating="8.7" data-info="2024 · Фантастика">+</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="page" style="padding-top:48px; padding-bottom:48px">
+      <div class="section-label">Популярное сейчас</div>
+      <div class="section-title">Смотрят сегодня</div>
+
+      <div class="featured-grid">
+        <div class="featured-card">
+          <div class="fc-thumb" style="background-image: url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=600'); background-size: cover; background-position: center;"></div>
+          <div class="fc-gradient"></div><div class="fc-overlay"></div>
+          <div class="fc-play-btn watch-trailer" data-video="https://www.youtube.com/embed/OzY2qZ7YLqo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="fc-content">
+            <div class="fc-badge">Сериал · Сезон 4</div>
+            <div class="fc-title">Наследники</div>
+            <div class="fc-orig">Succession</div>
+            <div class="fc-meta">
+              <span class="fc-rating">8.9</span>
+              <span>2018–2023 · США · Драма</span>
+              <button class="inline-fav-btn add-to-fav-btn" data-id="succession" data-title="Наследники" data-img="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300" data-rating="8.9" data-info="2018 · Сериал">+</button>
+            </div>
+            <div class="fc-desc">Медиамагнат Логан Рой и его дети в жестокой борьбе за власть над корпоративной империей.</div>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <div class="fc-thumb" style="background-image: url('https://images.unsplash.com/photo-1559583985-c80d8ad9b29f?q=80&w=600'); background-size: cover; background-position: center;"></div>
+          <div class="fc-gradient"></div><div class="fc-overlay"></div>
+          <div class="fc-play-btn watch-trailer" data-video="https://www.youtube.com/embed/vn9mMeWcjoM">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="fc-content">
+            <div class="fc-badge">Фильм · 4K HDR</div>
+            <div class="fc-title">Мир Юрского Периода 2</div>
+            <div class="fc-orig">Jurassic World: Fallen Kingdom</div>
+            <div class="fc-meta">
+              <span class="fc-rating">6.1</span>
+              <span>2018 · США · Боевик</span>
+              <button class="inline-fav-btn add-to-fav-btn" data-id="jurassic" data-title="Мир Юрского Периода 2" data-img="https://images.unsplash.com/photo-1559583985-c80d8ad9b29f?q=80&w=300" data-rating="6.1" data-info="2018 · Боевик">+</button>
+            </div>
+            <div class="fc-desc">Спасательная операция на острове превращается в борьбу за выживание среди динозавров.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wide-card" style="margin-top:40px; margin-bottom:56px">
+        <div class="wc-thumb" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000'); background-size: cover; background-position: center;"></div>
+        <div class="wc-gradient"></div>
+        <div class="wc-content">
+          <div class="wc-eyebrow">Редакция советует · Классика</div>
+          <div class="wc-title">Интерстеллар</div>
+          <div class="wc-orig">Interstellar, 2014</div>
+          <div class="wc-stats">
+            <div class="wc-score">8.6</div>
+            <div class="wc-imdb">IMDb <b>8.7</b></div>
+          </div>
+          <div class="wc-meta">2014 · США · Фантастика · 169 мин</div>
+          <div class="wc-desc">Команда исследователей отправляется сквозь червоточину в поисках нового дома для человечества.</div>
+          <div class="wc-actions">
+            <button class="btn-play watch-trailer" data-video="https://www.youtube.com/embed/zSWdZVtXT7E">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              Трейлер
+            </button>
+            <button class="btn-info add-to-fav-btn" data-id="interstellar" data-title="Интерстеллар" data-img="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=300" data-rating="8.6" data-info="2014 · Фантастика">Буду смотреть</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Новинки</div>
+      <div class="section-title">Фильмы недели</div>
+      <div class="posters-grid-layout">
+        
+        <div class="poster-card-custom">
+          <div class="pcc-wrap">
+            <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400" alt="Оппенгеймер">
+            <div class="pcc-badge high">8.5</div>
+            <button class="pcc-add add-to-fav-btn" data-id="oppenheimer" data-title="Оппенгеймер" data-img="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=300" data-rating="8.5" data-info="2023 · Драма">+</button>
+            <div class="pcc-play watch-trailer" data-video="https://www.youtube.com/embed/bK6ldnjE3Y0">▶</div>
+          </div>
+          <div class="pcc-title">Оппенгеймер</div>
+          <div class="pcc-sub">2023 · Драма</div>
+        </div>
+
+        <div class="poster-card-custom">
+          <div class="pcc-wrap">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400" alt="Барби">
+            <div class="pcc-badge mid">7.4</div>
+            <button class="pcc-add add-to-fav-btn" data-id="barbie" data-title="Барби" data-img="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=300" data-rating="7.4" data-info="2023 · Комедия">+</button>
+            <div class="pcc-play watch-trailer" data-video="https://www.youtube.com/embed/pBk4NYFnW6o">▶</div>
+          </div>
+          <div class="pcc-title">Барби</div>
+          <div class="pcc-sub">2023 · Комедия</div>
+        </div>
+
+        <div class="poster-card-custom">
+          <div class="pcc-wrap">
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400" alt="Паразиты">
+            <div class="pcc-badge high">8.8</div>
+            <button class="pcc-add add-to-fav-btn" data-id="parasites" data-title="Паразиты" data-img="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=300" data-rating="8.8" data-info="2019 · Триллер">+</button>
+            <div class="pcc-play watch-trailer" data-video="https://www.youtube.com/embed/5xH0HfJHsaY">▶</div>
+          </div>
+          <div class="pcc-title">Паразиты</div>
+          <div class="pcc-sub">2019 · Триллер</div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <main id="watchlist-page" class="page-content page" style="padding-top: 80px; padding-bottom: 80px;">
+    <div class="cabinet-container">
+      
+      <div class="cabinet-section">
+        <div class="section-label">Твой список</div>
+        <div class="section-title">Буду смотреть (<span id="watchlist-count">0</span>)</div>
+        <div class="watchlist-flex" id="watchlist-output">
+          </div>
+      </div>
+
+      <div class="cabinet-section">
+        <div class="section-label">Активность</div>
+        <div class="section-title">Написать рецензию</div>
+        
+        <form id="review-form" class="review-panel">
+          <div class="input-group">
+            <label>Выберите фильм из отложенных:</label>
+            <select id="review-movie-select" required>
+              <option value="">-- Список пуст --</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Твоя оценка фильма (от 1 до 10):</label>
+            <input type="number" id="review-score" min="1" max="10" step="0.1" placeholder="Например: 8.5" required>
+          </div>
+          <div class="input-group">
+            <label>Твой комментарий или отзыв:</label>
+            <textarea id="review-text" rows="4" placeholder="Поделитесь мыслями о кино..." required></textarea>
+          </div>
+          <button type="submit" class="nav-watch-btn" style="width: 100%; padding: 12px;">Опубликовать на сайте</button>
+        </form>
+
+        <div class="section-title" style="margin-top: 40px;">Моя лента рецензий</div>
+        <div id="reviews-output">
+          </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2006–2026 ООО «КиноПоиск». Отредактировано и упорядочено.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
